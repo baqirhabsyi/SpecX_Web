@@ -53,14 +53,14 @@
                                 Connect obj_con = new Connect();
                                 Connection con = obj_con.Open();
                                 ResultSet rs = null;
-                                String sql = "select * from required_Specs";
+                                String sql = "select a.Code, a.AppReqGpuNameMin, a.AppReqGpuLevelMin, a.AppReqCpuNameMin, a.AppReqCpuLevelMin, a.AppReqRamMin, b.AppReqGpuNameRec, b.AppReqGpuLevelRec, b.AppReqCpuNameRec, b.AppReqCpuLevelRec, b.AppReqRamRec from required_Minimum a join required_Recomended b on a.Code = b.Code";
                                 Statement stmt = con.createStatement();
                                 rs = stmt.executeQuery(sql);
                                 while(rs.next())
                                 {
-                                    String id = rs.getString("AppName");
+                                    String id = rs.getString("Code");
                                     out.println("<tr>");
-                                    out.print("<td>"+rs.getString("AppName")+"</td>");
+                                    out.print("<td>"+id+"</td>");
                                     out.print("<td>"+rs.getString("AppReqGpuNameMin")+"</td>");
                                     out.print("<td>"+rs.getString("AppReqGpuNameRec")+"</td>");
                                     out.print("<td>"+rs.getString("AppReqCpuNameMin")+"</td>");
@@ -68,7 +68,8 @@
                                     out.print("<td>"+rs.getString("AppReqRamMin")+" MB</td>");
                                     out.print("<td>"+rs.getString("AppReqRamRec")+" MB</td>");
                                     out.print("<td><a href=editGames.jsp?"+id+">Edit Game Data");
-                                    out.print("</a> | <a href=deleteGame.jsp"+id+">Delete Game Data");
+                                    out.print("</a> | <a href=deleteGame.jsp?"+id+">Delete Game Data");
+                                    out.print("</a> | <a href=compareGame.jsp?"+id+"Test Compare to PC Data</a>");
                                 }
                                 stmt.close();
                                 con.close();

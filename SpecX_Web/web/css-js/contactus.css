@@ -1,0 +1,164 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 10, 2015, 1:37:06 PM
+    Author     : Rio7
+*/
+
+.header {
+    height: 50px;
+    width:100%;
+    position:fixed;
+    top: 0px;
+    height:50px;
+    background-color: rgba(123, 123, 123, 0.28);
+    width:1380px;
+    margin:0px auto;
+}
+.centered{
+    text-align: center;
+}
+.h2, h2 {
+    font-size: 36px;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 60px;
+    margin-bottom: 10px;
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.1;
+    color: #fff;
+}
+h1 {
+    margin: 0.67em 0px;
+}
+hr{
+    border: 0px none;
+    height: 2px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: -moz-linear-gradient(left center , #000, #fff, #000) repeat scroll 0% 0% #fff;
+    box-sizing: content-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  background: url(../gambar/p2.jpg);
+  font-family: 'NexaLight', Nexa;
+}
+ 
+.nav ul {
+  list-style: none;
+  background-color: rgba(123, 123, 123, 0.28);
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'NexaLight', Nexa;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #fff;
+}
+ 
+/*.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}*/
+ 
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 180px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.3em;
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+ 
+  /* Options 2 - Float
+  .nav li {
+    float: left;
+  }
+  .nav ul {
+    overflow: auto;
+    width: 600px;
+    margin: 0 auto;
+  }
+  .nav {
+    background-color: #444;
+  }
+  */
+}
+.contentFake{
+    padding-top: 20px;
+    color: #FFF;
+    font-family: 'NexaLight',Nexa;
+    width: 1170px;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(123, 123, 123, 0.28);
+    text-align: center;
+    line-height: 60px;
+}
+.bawah {
+    width: 1170px;
+    color: #fff;
+    font-family: 'NexaLight', Nexa;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    font-family: 'NexaLight', Nexa;
+    color: #000;
+}
+.nostyle:link, .nostyle:visited {
+    color: #fff;
+}
+a:link, a:visited {
+    color: #fff;
+}
+a {
+    color: #337AB7;
+    text-decoration: none;
+}
+a:hover {
+    color: #000;
+    text-decoration: underline;
+    background-color: transparent;
+}

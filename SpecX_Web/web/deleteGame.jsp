@@ -1,7 +1,7 @@
 <%-- 
-    Document   : deleteGame
-    Created on : 15-Apr-2015, 09:23:02
-    Author     : Baqir
+    Document   : deletegame
+    Created on : Apr 15, 2015, 9:08:13 PM
+    Author     : Rio7
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,10 +13,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Delete Game</title>
+        <link rel="stylesheet" type="text/css" href="css-js/deletegame.css">
+        <title>SPECX: Delete Game</title>
     </head>
     <body>
-        <form action="deleteGame" method="post">
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Run Now</a></li>
+                    <li><a href="aboutus.jsp">About Us</a></li>
+                    <li><a href="tos.jsp">Terms of Service</a></li>
+                    <li><a href="contactus.jsp">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+         <div class='contentFake'>
+            <h2 class="centered">
+                Delete Game
+            </h2>
+            <hr></hr>
+       <form action="deletegame" method="post">
             <%
             Connect obj_con = new Connect();
             ResultSet rs = null;
@@ -84,6 +101,20 @@
                     <td align="right"><a href="viewGames.jsp"><input type="button" value="Cancel"/></a></td>
                 </tr>
             </table>
-        </form>
+       </form>
+         </div>>
+        <br></br>
+        <div class='footer'>
+            <div class='bawah'>
+                <span>
+                    Copyright © SpecX.com 2015 -
+                    <a class= "nostyle" href="#">Privacy Policy</a> -
+                    <a class= "nostyle" href="#">Powered by System Requirements Lab</a> -
+                    <a class= "nostyle" href="#">Reddit</a> -
+                    <a class= "nostyle" href="#">Youtube</a> -
+                    <a class= "nostyle" href="login.jsp">WEBMASTER ?</a>
+                </span>
+            </div>
+        </div>
     </body>
 </html>

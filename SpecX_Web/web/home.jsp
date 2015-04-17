@@ -1,6 +1,6 @@
 <%-- 
-    Document   : getdata
-    Created on : Apr 15, 2015, 8:49:41 PM
+    Document   : home
+    Created on : Apr 9, 2015, 10:16:14 AM
     Author     : Rio7
 --%>
 
@@ -9,42 +9,31 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css-js/getdata.css">
-        <title>SPECX: Edit Game Data</title>
+        <link rel="stylesheet" type="text/css" href="css-js/home.css">
+        <title>SPECX: Home</title>
     </head>
     <body>
         <header>
             <div class="nav">
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Run Now</a></li>
+                    <li><a href="getData.jsp">Run Now</a></li>
                     <li><a href="aboutus.jsp">About Us</a></li>
                     <li><a href="tos.jsp">Terms of Service</a></li>
                     <li><a href="contactus.jsp">Contact Us</a></li>
                 </ul>
             </div>
         </header>
-         <div class='contentFake'>
-            <h2 class="centered">
-                Get Data
-            </h2>
+        <div class='contentFake'>
+            <h1 class="centered">
+                Welcome to SpecX
+            </h1>
             <hr></hr>
-        <form method="GET" action="getData">
-            <input type="submit" name="sesuatu"/>
-            <div class="loader bar-wave">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-
-                <div class="loader-message">
-                    Getting your PC Data... Hang in there!
+            <div class="slardar">
                 </div>
-            </div>
-        </form>
-            </div>
-        <br></br>
+            <br></br>
+            <hr></hr>
+        </div>
         <div class='footer'>
             <div class='bawah'>
                 <span>

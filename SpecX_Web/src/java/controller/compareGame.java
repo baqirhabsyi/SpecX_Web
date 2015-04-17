@@ -18,6 +18,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
+import java.sql.PreparedStatement;
 import config.Connect;
 import model.Check;
 
@@ -42,8 +44,20 @@ public class compareGame extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             
+//            String Name = (String)request.getParameter("combo_zone1");
+//            
+//            Connect obj_con = new Connect();
+//            Connection con = obj_con.Open();
+//            
+//            String sql = "select * from Application_Names where AppName = ?";
+//            PreparedStatement ps = con.prepareStatement(sql);
+//            ps.setString(1, Name);
+//            ResultSet rs = ps.executeQuery();
+//            rs.next();
+            //String Code = rs.getString(2);
+            
             String Code = request.getParameter("Code");
-           
+            
             Check c = new Check();
            
             c.setCode(Code);
@@ -73,6 +87,11 @@ public class compareGame extends HttpServlet {
                 request.setAttribute("return", "Do Not Get Any Settings");
                 rd.forward(request, response);
             }
+           
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
         }
     }
 

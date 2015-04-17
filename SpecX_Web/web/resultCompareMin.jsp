@@ -1,8 +1,9 @@
 <%-- 
-    Document   : resultCompareMin
-    Created on : 15-Apr-2015, 15:23:09
-    Author     : Baqir
+    Document   : resultcomparemin
+    Created on : Apr 15, 2015, 9:28:14 PM
+    Author     : Rio7
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import ="java.sql.*" %>
 <%@page import ="config.Connect" %>
@@ -12,10 +13,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" type="text/css" href="css-js/rcm.css">
+        <title>SPECX: Result Minimum</title>
     </head>
     <body>
-        <%
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Run Now</a></li>
+                    <li><a href="aboutus.jsp">About Us</a></li>
+                    <li><a href="tos.jsp">Terms of Service</a></li>
+                    <li><a href="contactus.jsp">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+         <div class='contentFake'>
+            <h2 class="centered">
+                YES YOU CAN RUN THE GAME
+            </h2>
+            <hr></hr>
+      <%
             try
                 {
                 String myCPU, myGPU, myRAM, recCPU, recGPU, recRAM, minCPU, minGPU, minRAM, minHDD;
@@ -42,6 +60,19 @@
             }
                 
         %>
-        <h1>Hello World!</h1>
+        </div>
+        <br></br>
+        <div class='footer'>
+            <div class='bawah'>
+                <span>
+                    Copyright © SpecX.com 2015 -
+                    <a class= "nostyle" href="#">Privacy Policy</a> -
+                    <a class= "nostyle" href="#">Powered by System Requirements Lab</a> -
+                    <a class= "nostyle" href="#">Reddit</a> -
+                    <a class= "nostyle" href="#">Youtube</a> -
+                    <a class= "nostyle" href="login.jsp">WEBMASTER ?</a>
+                </span>
+            </div>
+        </div>
     </body>
 </html>

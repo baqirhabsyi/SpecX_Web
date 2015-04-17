@@ -1,7 +1,7 @@
 <%-- 
-    Document   : viewGames
-    Created on : 31-Mar-2015, 14:14:34
-    Author     : Baqir
+    Document   : viewgames
+    Created on : Apr 15, 2015, 9:37:55 PM
+    Author     : Rio7
 --%>
 
 <%@page import ="java.sql.*" %>
@@ -12,7 +12,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
-        <title>Games Data</title>
+        <title>SPECX: Games Data</title>
+        <link rel="stylesheet" type="text/css" href="css-js/viewgames.css">
         <link rel="stylesheet" type="text/css" href="media/css/jquery.dataTables.css"/>
         <link rel="stylesheet" type="text/css" href="resources/syntax/shCore.css">
         <link rel="stylesheet" type="text/css" href="resources/demo.css">
@@ -28,11 +29,29 @@
                 $('#example').dataTable();
             });
         </script>
+        <title>SPECX: View Games</title>
     </head>
-    <body class="dt-example">
-        <div class="container">
+    <body>
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Run Now</a></li>
+                    <li><a href="aboutus.jsp">About Us</a></li>
+                    <li><a href="tos.jsp">Terms of Service</a></li>
+                    <li><a href="contactus.jsp">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+         <div class='contentFake'>
+            <h2 class="centered">
+                VIEW GAMES
+            </h2>
+            <hr></hr>
+            <div class="dt-example">
+                <div class="container">
             <section>
-                <h1>DataTables example <span>Base style</span></h1>
+                <h1>Data Game</h1>
                 <table id="example" class="display" cellspacing="0" width="100%">
                     <thead>
                         <tr>
@@ -70,6 +89,7 @@
                                     out.print("<td><a href=editGames.jsp?"+id+">Edit Game Data");
                                     out.print("</a> | <a href=deleteGame.jsp?"+id+">Delete Game Data");
                                     out.print("</a> | <a href=compareGame.jsp?"+id+"Test Compare to PC Data</a>");
+                                    out.print("</tr>");
                                 }
                                 stmt.close();
                                 con.close();
@@ -82,6 +102,21 @@
                     </tbody>
                 </table>
             </section>
+        </div>
+                </div>
+        </div>
+        <br></br>
+        <div class='footer'>
+            <div class='bawah'>
+                <span>
+                    Copyright © SpecX.com 2015 -
+                    <a class= "nostyle" href="#">Privacy Policy</a> -
+                    <a class= "nostyle" href="#">Powered by System Requirements Lab</a> -
+                    <a class= "nostyle" href="#">Reddit</a> -
+                    <a class= "nostyle" href="#">Youtube</a> -
+                    <a class= "nostyle" href="login.jsp">WEBMASTER ?</a>
+                </span>
+            </div>
         </div>
     </body>
 </html>

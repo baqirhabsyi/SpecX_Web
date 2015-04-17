@@ -1,6 +1,6 @@
 <%-- 
-    Document   : getdata
-    Created on : Apr 15, 2015, 8:49:41 PM
+    Document   : menulogin
+    Created on : Apr 16, 2015, 10:42:34 AM
     Author     : Rio7
 --%>
 
@@ -9,14 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="css-js/getdata.css">
-        <title>SPECX: Edit Game Data</title>
+        <link rel="stylesheet" type="text/css" href="css-js/home.css">
+        <title>SPECX: Menu Login</title>
     </head>
     <body>
         <header>
             <div class="nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="home.jsp">Home</a></li>
                     <li><a href="#">Run Now</a></li>
                     <li><a href="aboutus.jsp">About Us</a></li>
                     <li><a href="tos.jsp">Terms of Service</a></li>
@@ -24,27 +24,15 @@
                 </ul>
             </div>
         </header>
-         <div class='contentFake'>
-            <h2 class="centered">
-                Get Data
-            </h2>
+        <div class='contentFake'>
+            <h1 class="centered">
+                HELLO THERE!
+            </h1>
             <hr></hr>
-        <form method="GET" action="getData">
-            <input type="submit" name="sesuatu"/>
-            <div class="loader bar-wave">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-
-                <div class="loader-message">
-                    Getting your PC Data... Hang in there!
-                </div>
-            </div>
-        </form>
-            </div>
-        <br></br>
+            <a href="addgame.jsp">ADD GAME</a>
+            <a href="deletegame.jsp">DELETE GAME</a>
+            <a href="editgames.jsp">EDIT GAME</a>
+        </div>
         <div class='footer'>
             <div class='bawah'>
                 <span>
@@ -53,7 +41,7 @@
                     <a class= "nostyle" href="#">Powered by System Requirements Lab</a> -
                     <a class= "nostyle" href="#">Reddit</a> -
                     <a class= "nostyle" href="#">Youtube</a> -
-                    <a class= "nostyle" href="login.jsp">WEBMASTER ?</a>
+                    <a class= "nostyle" href="#">Sign Out</a>
                 </span>
             </div>
         </div>

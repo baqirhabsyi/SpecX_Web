@@ -47,7 +47,7 @@ public class getData extends HttpServlet {
             
             if(i > 0)
             {
-                RequestDispatcher rd = request.getRequestDispatcher("viewGames.jsp");
+                RequestDispatcher rd = request.getRequestDispatcher("compareGame.jsp");
                 request.setAttribute("return", "Data retrieved successfully.");
                 rd.forward(request, response);
             }

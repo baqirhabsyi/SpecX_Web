@@ -1,8 +1,9 @@
 <%-- 
-    Document   : editGames
-    Created on : 31-Mar-2015, 15:53:41
-    Author     : Baqir
+    Document   : editgames
+    Created on : Apr 15, 2015, 8:41:46 PM
+    Author     : Rio7
 --%>
+
 <%@page import="java.sql.*" %>
 <%@page import="config.Connect" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -10,10 +11,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Edit Game Data</title>
+        <link rel="stylesheet" type="text/css" href="css-js/editgame.css">
+        <title>SPECX: Edit Game Data</title>
     </head>
     <body>
-        <%
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Run Now</a></li>
+                    <li><a href="aboutus.jsp">About Us</a></li>
+                    <li><a href="tos.jsp">Terms of Service</a></li>
+                    <li><a href="contactus.jsp">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class='contentFake'>
+            <h2 class="centered">
+                Edit Game
+            </h2>
+            <hr></hr>
+             <%
             Connect obj_con = new Connect();
             ResultSet rs = null;
             
@@ -64,7 +82,7 @@
             
         %>
         <h1>Editing Data Page.</h1>
-        <form name="frmEdit" method="post" enctype="multipart/form-data" action="editGames">
+        <form name="frmEdit" method="post" enctype="multipart/form-data" action="editgames">
             <table border="1" align="center">
                 <tr>
                     <td width="100"><label>Game Name</label></td>
@@ -115,5 +133,19 @@
                 </tr>
             </table>
         </form>
+        </div>
+        <br></br>
+        <div class='footer'>
+            <div class='bawah'>
+                <span>
+                    Copyright © SpecX.com 2015 -
+                    <a class= "nostyle" href="#">Privacy Policy</a> -
+                    <a class= "nostyle" href="#">Powered by System Requirements Lab</a> -
+                    <a class= "nostyle" href="#">Reddit</a> -
+                    <a class= "nostyle" href="#">Youtube</a> -
+                    <a class= "nostyle" href="login.jsp">WEBMASTER ?</a>
+                </span>
+            </div>
+        </div>
     </body>
 </html>

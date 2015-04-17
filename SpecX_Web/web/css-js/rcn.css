@@ -4,10 +4,11 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Apr 10, 2015, 7:20:03 AM
+    Created on : Apr 15, 2015, 9:33:00 PM
     Author     : Rio7
 */
-.header {
+
+header {
     height: 50px;
     width:100%;
     position:fixed;
@@ -16,6 +17,19 @@ and open the template in the editor.
     background-color: rgba(123, 123, 123, 0.28);
     width:1380px;
     margin:0px auto;
+}
+ol, ul {
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+.tos-item {
+    margin-bottom: 20px;
+}
+.lead {
+    font-size: 21px;
+    margin-bottom: 20px;
+    font-weight: 300;
+    line-height: 1.4;
 }
 p {
     margin: 0px 0px 10px;
@@ -47,6 +61,7 @@ hr{
     box-sizing: content-box;
 }
 body {
+  //margin-bottom: 60px;
   margin: 0;
   padding: 0;
   background: url(../media/p2.jpg);
@@ -115,7 +130,7 @@ body {
   */
 }
 .contentFake{
-    padding-top: 20px;
+    padding-top: 60px;
     color: #FFF;
     font-family: 'NexaLight',Nexa;
     width: 1170px;
@@ -125,13 +140,13 @@ body {
     margin-left: auto;
 }
 .footer {
-    position: absolute;
+    //position: absolute;
     bottom: 0px;
     width: 100%;
-    height: 60px;
+    height: 55px;
     background-color: rgba(123, 123, 123, 0.28);
     text-align: center;
-    line-height: 60px;
+    line-height: 57px;
 }
 .bawah {
     width: 1170px;

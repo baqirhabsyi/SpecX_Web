@@ -1,7 +1,7 @@
 <%-- 
-    Document   : addGame
-    Created on : 14-Apr-2015, 09:16:12
-    Author     : Baqir
+    Document   : addgame
+    Created on : Apr 15, 2015, 8:15:51 PM
+    Author     : Rio7
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -9,11 +9,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Add Game Data</title>
+        <link rel="stylesheet" type="text/css" href="css-js/addgame.css">
+        <title>SPECX: Add Game Data</title>
     </head>
     <body>
-        <form method="post" enctype="multipart/form-data" action="addGame">
-        <h1>Adding Game Data</h1></br>
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Run Now</a></li>
+                    <li><a href="aboutus.jsp">About Us</a></li>
+                    <li><a href="tos.jsp">Terms of Service</a></li>
+                    <li><a href="contactus.jsp">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+        <div class='contentFake'>
+            <h2 class="centered">
+                Add Game
+            </h2>
+            <hr></hr>
+            <form method="post" enctype="multipart/form-data" action="addgame">
         <table border="1" align="center">
                 <tr>
                     <td width="100"><label>Game Name</label></td>
@@ -64,9 +80,23 @@
                     <td><input type="number" id="RecRam" name="RecRam" required/></td>
                 </tr>
                 <tr>
-                    <td colspan="2"><input type="submit" value="addd"/></td>
+                    <td colspan="2"><input type="submit" value="add"/></td>
                 </tr>
             </table>
         </form>
+        </div>
+        <br></br>
+        <div class='footer'>
+            <div class='bawah'>
+                <span>
+                    Copyright © SpecX.com 2015 -
+                    <a class= "nostyle" href="#">Privacy Policy</a> -
+                    <a class= "nostyle" href="#">Powered by System Requirements Lab</a> -
+                    <a class= "nostyle" href="#">Reddit</a> -
+                    <a class= "nostyle" href="#">Youtube</a> -
+                    <a class= "nostyle" href="login.jsp">WEBMASTER ?</a>
+                </span>
+            </div>
+        </div>
     </body>
 </html>

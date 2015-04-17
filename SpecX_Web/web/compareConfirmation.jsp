@@ -15,7 +15,7 @@
         String Code = request.getQueryString();
     %>
     <body>
-        <form method="post" action="compareGame">
+        <form action="compareGame" method="post" >
         <h1>Comparing <%=Code%> With your PC.</h1>
             <table align="center">
                 <tr>

@@ -9,6 +9,7 @@
 <%@page import ="config.Connect" %>
 <%@page import ="model.Check" %>
 <%@page import ="java.util.ArrayList" %>
+
 <!DOCTYPE html>
 <html>
      <head>
@@ -16,30 +17,32 @@
         <link rel="stylesheet" type="text/css" href="css-js/rcn.css">
         <title>SPECX: Result Normal</title>
     </head>
-    <body>
-        <header>
-            <div class="nav">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Run Now</a></li>
-                    <li><a href="aboutus.jsp">About Us</a></li>
-                    <li><a href="tos.jsp">Terms of Service</a></li>
-                    <li><a href="contactus.jsp">Contact Us</a></li>
-                </ul>
-            </div>
-        </header>
-         <div class='contentFake'>
-            <h2 class="centered">
-                RESULT COMPARE NORMAL
-            </h2>
-            <hr></hr>
-       <%
+           <%
+            String myCPU = "";
+            String myGPU = "";
+            String myRAM = "";
+            String recCPU = "";
+            String recGPU = "";
+            String recRAM = "";
+            String minCPU = "";
+            String minGPU = "";
+            String minRAM = "";
+            String minHDD = "";
+
             try
                 {
-                String myCPU, myGPU, myRAM, recCPU, recGPU, recRAM, minCPU, minGPU, minRAM, minHDD;
+                Connect obj_con = new Connect();
+                Connection con = obj_con.Open();
+                
+                String sql = "select tempdata from tempdata";
+                PreparedStatement ps = con.prepareStatement(sql);
+                ResultSet rs = ps.executeQuery();
+                
+                rs.next();
+                String Code = rs.getString(1);
 
                 Check c = new Check();
-
+                c.setCode(Code);
                 ArrayList getData = c.runitData();
                 for(int i = 0; i < getData.size() - 1; i+=9)
                 {
@@ -60,6 +63,94 @@
             }
                 
         %>
+    <body>
+        <header>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Run Now</a></li>
+                    <li><a href="aboutus.jsp">About Us</a></li>
+                    <li><a href="tos.jsp">Terms of Service</a></li>
+                    <li><a href="contactus.jsp">Contact Us</a></li>
+                </ul>
+            </div>
+        </header>
+         <div class='contentFake'>
+            <h2 class="centered">
+                Sorry, you can't run the game.
+            </h2>
+            <hr></hr>
+
+        </div>
+        <br></br>
+        <div class="grid">
+            <div class='col span-2'></div>
+            <div class='col span-8'>
+                <div class="tabs--horizontal" data-tab='anus'>
+                    <nav class="tab-nav" data-tab-nav='anus'>
+                        <ul>
+                            <li><a href="#one">Your Specs</a></li>
+                            <li><a href='#two'>Minimum Specs</a></li>
+                            <li><a href="#three">Recommended Specs</a></li>
+                        </ul>
+                    </nav>
+                    
+                    <section class='tab-section' data-tab-section='anus'>
+                        <table class="table is-striped large">
+                            <thead>
+                                <tr>
+                                    <td>CPU</td>
+                                    <td>GPU</td>
+                                    <td>RAM</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><%=myCPU%></td>
+                                    <td><%=myGPU%></td>
+                                    <td><%=myRAM%> MB</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section class='tab-section' data-tab-section='anus'>
+                        <table class="table is-striped large">
+                            <thead>
+                                <tr>
+                                    <td>CPU</td>
+                                    <td>GPU</td>
+                                    <td>RAM</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><%=minCPU%></td>
+                                    <td><%=minGPU%></td>
+                                    <td><%=minRAM%> MB</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                    <section class='tab-section' data-tab-section='anus'>
+                        <table class="table is-striped large">
+                            <thead>
+                                <tr>
+                                    <td>CPU</td>
+                                    <td>GPU</td>
+                                    <td>RAM</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><%=recCPU%></td>
+                                    <td><%=recGPU%></td>
+                                    <td><%=recRAM%> MB</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
         </div>
         <br></br>
         <div class='footer'>
@@ -74,5 +165,13 @@
                 </span>
             </div>
         </div>
+        <script type="text/javascript" src="css-js/toolkit.js"></script>
+        <script>
+            var ti = function(){
+                $('.tabs').tab();
+            };
+            
+            $(document).ready(ti);
+        </script>
     </body>
 </html>

@@ -288,22 +288,39 @@ public class Check
             
             //get level for the game requirements
             String gMin, gRec, cMin, cRec, rMin, rRec;
+//            String gMin = "";
+//            String gRec = "";
+//            String cMin = "";
+//            String cRec = "";
+//            String rMin = "";
+//            String rRec = "";
             
-            String ambilButuh = "select a.Code, a.AppReqGpuNameMin, a.AppReqGpuLevelMin, a.AppReqCpuNameMin, a.AppReqCpuLevelMin, a.AppReqRamMin, b.AppReqGpuNameRec, b.AppReqGpuLevelRec, b.AppReqCpuNameRec, b.AppReqCpuLevelRec, b.AppReqRamRec from required_Minimum a join required_Recomended b on a.Code = b.Code";
+            //String ambilButuh = "select a.Code, a.AppReqGpuNameMin, a.AppReqGpuLevelMin, a.AppReqCpuNameMin, a.AppReqCpuLevelMin, a.AppReqRamMin, b.AppReqGpuNameRec, b.AppReqGpuLevelRec, b.AppReqCpuNameRec, b.AppReqCpuLevelRec, b.AppReqRamRec from required_Minimum a join required_Recomended b on a.Code = b.Code";
             
-            PreparedStatement ambil2 = con.prepareStatement(ambilButuh);
-            ambil2.setString(1, Code);
+            String ambilMin = "select * from required_Minimum where Code = ?";
+            String ambilRec = "select * from required_Recomended where Code = ?";
             
-            ResultSet gameData = ambil2.executeQuery();
-            gameData.next();
+            PreparedStatement ambil99 = con.prepareStatement(ambilMin);
+            PreparedStatement ambil98 = con.prepareStatement(ambilRec);
             
-            //saves the data into variable
-            gMin = gameData.getString("AppReqGpuLevelMin");
-            gRec = gameData.getString("AppReqGpuLevelRec");
-            cMin = gameData.getString("AppReqCpuLevelMin");
-            cRec = gameData.getString("AppReqCpuLevelRec");
-            rMin = gameData.getString("AppReqRamMin");
-            rRec = gameData.getString("AppReqRamRec");
+            ambil99.setString(1,Code);
+            ambil98.setString(1,Code);
+            
+            ResultSet gameMin = ambil99.executeQuery();
+            
+            gameMin.next();
+                gMin = gameMin.getString("AppReqGpuLevelMin");
+                cMin = gameMin.getString("AppReqCpuLevelMin");
+                rMin = gameMin.getString("AppReqRamMin");
+            
+            
+            ResultSet gameRec = ambil98.executeQuery();
+            
+            gameRec.next();
+                gRec = gameRec.getString("AppReqGpuLevelRec");
+                cRec = gameRec.getString("AppReqCpuLevelRec");
+                rRec = gameRec.getString("AppReqRamRec");
+            
             
             //converts the level of the component into int
             int igMin, igRec, icMin, icRec, irMin, irRec, igMy, icMy, irMy;
@@ -333,10 +350,7 @@ public class Check
                 {
                     i = 1;
                 }
-            }
-            
-            
-            
+            }  
         }
         catch(java.sql.SQLException e)
         {
@@ -539,22 +553,31 @@ public class Check
             //myHDD = sebuahSet.getString("myHDD");
             
             //getting game data using preparedstatement
-            String sql1 = "select a.Code, a.AppReqGpuNameMin, a.AppReqGpuLevelMin, a.AppReqCpuNameMin, a.AppReqCpuLevelMin, a.AppReqRamMin, b.AppReqGpuNameRec, b.AppReqGpuLevelRec, b.AppReqCpuNameRec, b.AppReqCpuLevelRec, b.AppReqRamRec from required_Minimum a join required_Recomended b on a.Code = b.Code";
-            PreparedStatement psmt = con.prepareStatement(sql1);
+            String ambilMin = "select * from required_Minimum where Code = ?";
+            String ambilRec = "select * from required_Recomended where Code = ?";
             
             //setting the parameter so the data retrieved from the database are taken according to the game selected on the previous form
-            psmt.setString(1, Code);
+            PreparedStatement ambil99 = con.prepareStatement(ambilMin);
+            PreparedStatement ambil98 = con.prepareStatement(ambilRec);
             
             //creating resultset, again
-            ResultSet sebuahSet1 = psmt.executeQuery();
-            sebuahSet1.next();
-            recCPU = sebuahSet1.getString("AppReqCpuNameRec");
-            recGPU = sebuahSet1.getString("AppReqGpuNameRec");
-            recRAM = sebuahSet1.getString("AppReqRamRec");
+            ambil99.setString(1,Code);
+            ambil98.setString(1,Code);
             
-            minCPU = sebuahSet1.getString("AppReqCpuNameMin");
-            minGPU = sebuahSet1.getString("AppReqGpuNameMin");
-            minRAM = sebuahSet1.getString("AppReqRamMin");
+            ResultSet gameMin = ambil99.executeQuery();
+            
+            gameMin.next();
+            minGPU = gameMin.getString("AppReqGpuNameMin");
+            minCPU = gameMin.getString("AppReqCpuNameMin");
+            minRAM = gameMin.getString("AppReqRamMin");
+            
+            
+            ResultSet gameRec = ambil98.executeQuery();
+            
+            gameRec.next();
+            recGPU = gameRec.getString("AppReqGpuNameRec");
+            recCPU = gameRec.getString("AppReqCpuNameRec");
+            recRAM = gameRec.getString("AppReqRamRec");
             
             //storing the variables to arraylist
             //myCPU, myGPU, myRAM, myHDD, recCPU, recGPU, recRAM, recHDD, minCPU, minGPU, minRAM, minHDD;

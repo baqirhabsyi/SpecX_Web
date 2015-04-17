@@ -66,7 +66,7 @@
                                     String nama = rs.getString("AppName");
                                     out.println("<tr>");
                                     out.print("<td>"+nama+"</td>");
-                                    out.print("<td><a href = compareConfirmation.jsp?"+Code+">TITIT</a></td>");
+                                    out.print("<td><a href = compareConfirmation.jsp?"+ Code +">TITIT</a></td>");
                                 }
                                 stmt.close();
                                 con.close();

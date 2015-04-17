@@ -17,6 +17,7 @@
         <link rel="stylesheet" type="text/css" href="media/css/jquery.dataTables.css"/>
         <link rel="stylesheet" type="text/css" href="resources/syntax/shCore.css">
         <link rel="stylesheet" type="text/css" href="resources/demo.css">
+        <link rel="stylesheet" type="text/css" href="css-js/toolkit.css">
         <style type="text/css" class="init"></style>
         
         <script type="text/javascript" language="javascript" src="media/js/jquery.js"></script>
@@ -52,10 +53,13 @@
                 <div class="container">
             <section>
                 <h1>Data Game</h1>
-                <table id="example" class="display" cellspacing="0" width="100%">
+                <table id="example" class="table is-striped is-sortable" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th>Application Name</th>
+                            <th>Application Name<span class="sorter asc">
+                                    <span class="caret-up"></span>
+                                    <span class="caret-down"></span>
+                                </span></th>
                             <th>Minimum Required GPU</th>
                             <th>Recommended GPU</th>
                             <th>Minimum Required CPU</th>
